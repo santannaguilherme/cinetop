@@ -1,0 +1,63 @@
+$preto_claro: rgb(5, 5, 5);
+$laranja_padrao: rgb(255, 94, 0);
+$laranja_mais_escuro: rgb(204, 75, 0);
+$laranja_mais_escuro_ainda: rgb(180, 69, 5);
+$preto_mais_claro: rgb(20, 20, 20);
+$preto_mais_claro_ainda: rgb(27, 27, 27);
+$preto_mais_claro_ainda_2: rgb(32, 32, 32);
+$laranja_mais_escuro_ainda_2: rgb(126, 51, 1);
+.area-total {
+    width: 15vw;
+    height: 6vh;
+    animation-name: transform;
+    animation-duration: 1s;
+}
+
+.texto {
+    width: 15vw;
+    height: 2vh;
+    background-color: $preto_mais_claro_ainda;
+    border-radius: 10px 10px 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 80%;
+}
+
+.botoes {
+    width: 15vw;
+    height: 6vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: $preto_mais_claro_ainda_2;
+    border-radius: 0 0 10px 10px;
+}
+
+.botao {
+    background: none;
+    padding: 0 5%;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+.sim {
+    border: 1px solid $laranja_padrao;
+    color: $laranja_padrao;
+}
+
+.nao {
+    background-color: $laranja_padrao;
+}
+
+@keyframes transform {
+    from {
+        opacity: 0;
+        transform: translate(0, 0.5em);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}

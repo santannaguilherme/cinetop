@@ -1,0 +1,210 @@
+$preto_claro: rgb(5, 5, 5);
+$laranja_padrao: rgb(255, 94, 0);
+$laranja_mais_escuro: rgb(204, 75, 0);
+$preto_mais_claro: rgb(20, 20, 20);
+.area-do-site {
+    width: 100vw;
+    height: fit-content;
+    background-color: $preto_claro;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.texto-h1 {
+    font-size: 5vw;
+}
+
+.texto-h3 {
+    font-size: 2.5vw;
+}
+
+.cabecalho {
+    display: flex;
+    align-items: center;
+    height: 10vh;
+    width: 92%;
+    padding: 0 4%;
+}
+
+h1 {
+    font-size: 70px;
+    cursor: default;
+}
+
+h3 {
+    font-size: 30px;
+    cursor: default;
+}
+
+h5 {
+    font-size: 12px;
+    cursor: default;
+    font-weight: 100;
+    color: lightgray;
+}
+
+.area-da-apresentacao {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 53vh;
+}
+
+.area-dos-botoes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 90%;
+    height: 28vh;
+}
+
+.botoes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 99%;
+    height: 50%;
+}
+
+.background {
+    width: 100%;
+    height: 100%;
+    background: url(../../../../assets/background_home.jpg);
+}
+
+.mascara-degrade {
+    mask-image: linear-gradient(to bottom, black, transparent);
+    position: absolute;
+    width: 100vw;
+    height: 91vh;
+    z-index: 0;
+}
+
+.mascara-imagem-inteira {
+    width: 100vw;
+    height: 91vh;
+    position: absolute;
+    z-index: 0;
+    background-color: rgb(5, 5, 5);
+    opacity: 0.4;
+}
+
+.conteudo {
+    width: 100%;
+    height: 91vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: transparent;
+    position: relative;
+    z-index: 1;
+}
+
+.rodape {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 80vh;
+    z-index: 1;
+}
+
+.linha {
+    width: 92%;
+    border: 2px solid $preto_mais_claro;
+    border-radius: 100px;
+}
+
+.duvidas {
+    padding-top: 3%;
+    margin-bottom: 0.5%;
+    width: 55%;
+}
+
+.colunas {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+    width: 75%;
+}
+
+.coluna {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 30%;
+    height: 90%;
+    background-color: $preto_mais_claro;
+    border-radius: 10px;
+    padding-top: 2%;
+}
+
+.link-rodape {
+    padding-left: 7%;
+    margin-bottom: 3%;
+    color: lightgray;
+}
+
+#logotipo {
+    max-width: 10vw;
+    max-height: 50vh;
+}
+
+#botao-laranja {
+    background-color: $laranja_padrao;
+    border: none;
+    height: fit-content;
+    width: fit-content;
+    padding: 1% 3%;
+    font-size: 1.5vw;
+    outline: none;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+#botao-laranja:hover {
+    animation-name: botao-fade;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.footer {
+    font-size: 50px;
+    height: 5vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.animacao-site {
+    animation-name: fade-out;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+#area-total {
+    width: 100vw;
+    height: 100%;
+}
+
+@keyframes botao-fade {
+    to {
+        background-color: $laranja_mais_escuro;
+        font-size: 1.6vw;
+    }
+}
+
+@keyframes fade-out {
+    to {
+        opacity: 0;
+    }
+}

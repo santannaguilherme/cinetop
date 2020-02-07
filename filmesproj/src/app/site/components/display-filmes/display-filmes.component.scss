@@ -1,0 +1,41 @@
+$preto_claro: rgb(5, 5, 5);
+$laranja_padrao: rgb(255, 94, 0);
+$laranja_mais_escuro: rgb(204, 75, 0);
+$laranja_mais_escuro_ainda: rgb(180, 69, 5);
+$preto_mais_claro: rgb(20, 20, 20);
+$preto_mais_claro_ainda: rgb(37, 37, 37);
+$laranja_mais_escuro_ainda_2: rgb(126, 51, 1);
+#filmes-displ {
+    max-width: 100vw;
+    height: 35vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.botoes-movimento {
+    height: 32vh;
+    width: 2.5vw;
+    background: none;
+    border: none;
+    outline: none;
+    opacity: 0.4;
+    z-index: 1;
+    position: relative;
+}
+
+.botoes-movimento:hover {
+    opacity: 0.8;
+}
+
+#apresentar-lista {
+    width: 95vw;
+    height: 35vh;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    z-index: 0;
+    align-items: center;
+}

@@ -1,0 +1,147 @@
+$laranja_padrao: rgb(255, 94, 0);
+$laranja_mais_escuro: rgb(204, 75, 0);
+.filme-detalhe {
+    width: 85vw;
+    height: 100vh;
+}
+
+#header {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+}
+
+button {
+    outline: none;
+}
+
+.conteudo {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1vh;
+    margin-left: 1vw;
+    width: 100%;
+    height: 60vh;
+}
+
+#voltar {
+    width: 10vw;
+    height: 5vh;
+    background-color: $laranja_padrao;
+    border-color: $laranja_mais_escuro;
+    border-radius: 5px;
+    border: none;
+    margin-left: 2vw;
+    margin-right: 1vw;
+    cursor: pointer;
+}
+
+#voltar:hover {
+    animation-name: anim-botoes;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+#titulo {
+    margin-left: 1vw;
+}
+
+#coracao {
+    color: white;
+}
+
+#favoritar {
+    width: 2.5vw;
+    height: 5vh;
+    background-color: $laranja_padrao;
+    border: none;
+    border-radius: 5px;
+    margin-right: 1vw;
+    cursor: pointer;
+}
+
+.texto {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1vw;
+}
+
+#favoritar:hover {
+    animation-name: anim-botoes;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+#assistir {
+    width: 2.5vw;
+    height: 5vh;
+    background-color: $laranja_padrao;
+    border-color: $laranja_mais_escuro;
+    border: none;
+    border-radius: 5px;
+    margin-left: 1vw;
+    cursor: pointer;
+}
+
+#assistir:hover {
+    animation-name: anim-botoes;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.info {
+    display: inline-flex;
+    border: solid 1px;
+    padding: 3px;
+    font-size: 1.2vw;
+    border-color: $laranja_mais_escuro;
+    outline-color: $laranja_mais_escuro;
+}
+
+.comeco {
+    border-radius: 5px 5px 0 0;
+}
+
+.final {
+    border-radius: 0 0 5px 5px;
+}
+
+.sinopse {
+    margin-top: 1vh;
+    width: 50vw;
+    height: fit-content;
+    font-size: 1.2vw;
+    text-align: justify;
+    padding-bottom: 1vh;
+    border-bottom: dashed 1px;
+    border-color: $laranja_mais_escuro;
+}
+
+.diretor {
+    display: flex;
+    align-items: center;
+    height: 5vh;
+    width: 30vw;
+    font-size: 1.2vw;
+    border-bottom: dashed 1px;
+    border-color: $laranja_mais_escuro;
+}
+
+#imagem {
+    max-width: 25vw;
+    max-height: 55vh;
+}
+
+.elenco {
+    margin-top: 1vh;
+    width: 30vw;
+    font-size: 1.2vw;
+    border-color: $laranja_mais_escuro;
+}
+
+@keyframes anim-botoes {
+    to {
+        background-color: $laranja_mais_escuro;
+    }
+}

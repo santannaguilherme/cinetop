@@ -1,0 +1,40 @@
+<div id="site" class="area-do-site">
+    <div class="area-de-login">
+        <div class="area-do-logo">
+            Comece a usar!
+        </div>
+        <form id="form" class="form-group" [formGroup]="pageForm">
+            <input class="input" type="email" placeholder="E-mail" formControlName="email">
+            <input class="input" type="password" placeholder="Senha" formControlName="password">
+        </form>
+        <div class="area-do-meio">
+            <div class="esqueceu-senha">
+                <a class="link" href="">Esqueceu sua senha?</a>
+            </div>
+            <div class="alerta" [hidden]="pageForm.controls.email?.valid || pageForm.controls.email?.pristine">
+                <span class="alerta-vermelho" [hidden]="!pageForm.controls.email?.errors?.required">E-mail é um campo obrigatório!</span>
+            </div>
+            <div class="alerta" [hidden]="pageForm.controls.password?.valid || pageForm.controls.password?.pristine">
+                <span class="alerta-vermelho" [hidden]="!pageForm.controls.password?.errors?.required">Senha é um campo obrigatório!</span>
+            </div>
+            <div class="alerta">
+                <span class="alerta-vermelho">{{erro}}</span>
+            </div>
+            <div *ngIf="this.fazendo" class="carregador">
+                <mat-spinner [diameter]="20">
+                </mat-spinner>
+            </div>
+        </div>
+        <div class="area-abaixo" [hidden]="!fazendo">
+            <div class="area-cadastro">
+                <h5 class="texto">Novo por aqui?</h5>
+                <a class="cadastro link" [routerLink]="['/cadastro']">Cadastre-se!</a>
+            </div>
+            <div class="area-do-botao">
+                <button id="botao-entrar-login" type="submit" (click)="login()">Entrar</button>
+            </div>
+        </div>
+    </div>
+
+
+</div>

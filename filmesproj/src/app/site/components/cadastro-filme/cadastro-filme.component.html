@@ -1,0 +1,41 @@
+<div class="site">
+    <div class="area-de-cadastro">
+        <div class="area-do-logo">Cadastro de filmes</div>
+        <form class="form-group" [formGroup]="pageForm">
+
+            <div class="nome">
+                <input class="input inicio" type="text" placeholder="Título" formControlName="titulo">
+            </div>
+            <div class="sobrenome">
+                <input class="input" type="text" placeholder="Ano de lançamento" formControlName="ano">
+            </div>
+            <div class="email">
+                <input class="input" type="text" placeholder="Censura" formControlName="censura">
+            </div>
+            <div class="email">
+                <input class="input" type="text" placeholder="Duração - Em minutos. Ex: 132" formControlName="duracao">
+            </div>
+            <div class="email">
+                <input class="input" type="text" placeholder="Genero" formControlName="genero">
+            </div>
+            <div class="email">
+                <input class="input" type="text" placeholder="Diretor" formControlName="diretor">
+            </div>
+            <div class="email">
+                <input class="input" type="text" placeholder="Elenco" formControlName="elenco">
+            </div>
+            <div class="email">
+                <input class="input" type="text" placeholder="Sinopse" formControlName="sinopse">
+            </div>
+            <div class="email">
+                <input class="input final" type="text" placeholder="Url do poster - Ex: https://linkcurto.com/arquivo.jpg" formControlName="imagem">
+            </div>
+
+        </form>
+        {{msg}}
+        <div class="rodape">
+            <button [disabled]='!this.pageForm.valid' class="botao" type="submit" (click)="cadastrar()">Finalizar</button>
+        </div>
+        <!--<app-cadastra-trilha></app-cadastra-trilha>-->
+    </div>
+</div>

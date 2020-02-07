@@ -1,0 +1,156 @@
+$preto_claro: rgb(5, 5, 5);
+$laranja_padrao: rgb(255, 94, 0);
+$laranja_mais_escuro: rgb(204, 75, 0);
+$laranja_mais_escuro_ainda: rgb(180, 69, 5);
+$preto_mais_claro: rgb(20, 20, 20);
+$preto_mais_claro_2: rgb(31, 31, 31);
+$preto_mais_claro_ainda: rgb(37, 37, 37);
+$preto_mais_claro_ainda_2: rgb(49, 49, 49);
+$laranja_mais_escuro_ainda_2: rgb(126, 51, 1);
+.area-total {
+    width: 85vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.display-perfil {
+    width: 90%;
+    height: 90%;
+    background: linear-gradient( $preto_mais_claro_ainda_2, $preto_mais_claro_ainda);
+    border-radius: 33px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.informacoes {
+    width: 90%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.display {
+    width: 100%;
+    height: 80%;
+    padding-top: 2%;
+    cursor: default;
+}
+
+.salvar {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#botao-salvar {
+    border: none;
+    border-radius: 3px;
+    margin-right: 7%;
+    padding: 2% 6%;
+    outline: none;
+    background: $preto_mais_claro_ainda_2;
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all .5s ease-out;
+}
+
+#botao-salvar:disabled {
+    background: $preto_mais_claro_ainda_2;
+}
+
+.carregador ::ng-deep .mat-progress-spinner circle,
+.mat-spinner circle {
+    stroke: $laranja_mais_escuro_ainda_2;
+}
+
+#botao-salvar:enabled {
+    animation-name: botao-salvar-fade-in;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    cursor: pointer;
+}
+
+@keyframes botao-salvar-fade-in {
+    from {
+        background: $preto_mais_claro_ainda_2;
+    }
+    to {
+        background: $preto_mais_claro_2;
+    }
+}
+
+.nome {
+    width: 88%;
+    height: 10%;
+    padding: 0 6%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.sobrenome {
+    width: 94%;
+    height: 10%;
+    padding: 0 3%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.carregador {
+    padding-right: 1vw;
+}
+
+.email {
+    width: 88%;
+    height: 10%;
+    padding: 0 6%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.input {
+    width: 50%;
+    font-size: 1vw;
+}
+
+.item {
+    border-radius: 4px;
+    background-color: $preto_mais_claro_ainda_2;
+    border: 1px solid $laranja_padrao;
+    padding-left: 1%;
+    outline: none;
+    height: 50%;
+}
+
+.texto {
+    width: 100%;
+    height: 12%;
+    font-size: 140%;
+    padding-left: 10%;
+    display: flex;
+    align-items: center;
+}
+
+.linha {
+    width: 98%;
+    border: 1px solid $preto_mais_claro;
+    border-radius: 100px;
+}
+
+.informativo {
+    font-size: 0.8vw;
+    color: gray;
+}
+
+.label,
+span {
+    margin-right: 1%;
+}

@@ -1,0 +1,12 @@
+<div class="display-trilha">
+    <div id="filmes-display-especifico">
+
+        <button id="e" class="botoes-movimento"></button>
+
+        <div id="apresentar-list">
+            <app-trilha-card (click)="click(item)" class="card-film" *ngFor="let item of this.store.listaTrilhaEspecificos" [trilha]='item'></app-trilha-card>
+        </div>
+        <button id="d" class="botoes-movimento"></button>
+    </div>
+
+</div>

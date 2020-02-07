@@ -1,0 +1,27 @@
+<div class="site">
+    <nav class="menu-navegador">
+        <div class="apresentacao-usuario">
+            <div class="imagem"><img class="foto-perfil" [src]="this.usuario.foto"></div>
+            <div class="nome">{{this.usuario.nome}}</div>
+        </div>
+        <div class="linha "></div>
+        <ul class="opcoes">
+            <li class="opcoes-item" (click)="cliqueMenu(1)">Filmes</li>
+            <li class="opcoes-item" (click)="cliqueMenu(2)">Perfil</li>
+            <li class="opcoes-item" (click)="cliqueMenu(3)">Favoritos</li>
+            <li *ngIf="this.usuario.administrador" class="opcoes-item" (click)="cliqueMenu(4)">Cadastrar Filmes</li>
+        </ul>
+        <div class="rodape-menu">
+
+            <div class="confirmacao-sair">
+                <app-confirmacao-sair *ngIf="this.store.saindo" class="confirmacao"></app-confirmacao-sair>
+            </div>
+
+            <div class="sair">
+                <div class="botao-sair" (click)="logout()">Sair</div>
+                <div class="configuracoes"><img class="config-img" /></div>
+            </div>
+        </div>
+    </nav>
+    <router-outlet></router-outlet>
+</div>

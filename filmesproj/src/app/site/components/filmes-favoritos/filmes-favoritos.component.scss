@@ -1,0 +1,10 @@
+.area-dos-favoritos {
+    width: 85vw;
+    height: 100vh;
+    display: grid;
+    padding-left: 5vw;
+    grid-template-columns: 15vw 15vw 15vw 15vw 15vw;
+    grid-template-rows: auto;
+    justify-items: center;
+    overflow-y: scroll;
+}

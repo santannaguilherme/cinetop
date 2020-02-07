@@ -1,0 +1,37 @@
+<div class="area-total">
+    <div class="display-perfil">
+        <div class="informacoes">
+            <span class="texto">Perfil</span>
+            <div class="linha "></div>
+            <div class="display">
+                <div class="nome">
+                    <label class="label">Nome:</label>
+                    <span>{{this.store.state.nome}}</span>
+                </div>
+                <div class="sobrenome">
+                    <label class="label">Sobrenome:</label>
+                    <span>{{this.store.state.sobrenome}}</span>
+                </div>
+                <div class="email">
+                    <label class="label">Email:</label>
+                    <span>{{this.store.state.email}}</span>
+                </div>
+                <div>
+                    <label id="foto" class="label">Foto de perfil:</label>
+                    <input type="text" [(ngModel)]="foto" class="input item">
+                </div>
+                <div class="informativo">
+                    Copie e cole a url da imagem. Ex: https://static.mundoeducacao.bol.uol.com.br/mundoeducacao/2019/10/1-coala.jpg
+                </div>
+            </div>
+            <div class="salvar">
+                <div *ngIf="this.fazendo" class="carregador">
+                    <mat-spinner [diameter]="20" [color]="warn">
+                    </mat-spinner>
+                </div>
+                <button [disabled]="!foto" id="botao-salvar" type="submit" (click)=salvarPerfil()>Salvar</button>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,9 @@
+<div id="filmes-displ">
+
+    <button id="esquerda" class="botoes-movimento"></button>
+
+    <div id="apresentar-lista">
+        <app-filme-card (click)='click(item)' class="card-film" *ngFor="let item of this.store.state" [filme]='item'></app-filme-card>
+    </div>
+    <button id="direita" class="botoes-movimento"></button>
+</div>

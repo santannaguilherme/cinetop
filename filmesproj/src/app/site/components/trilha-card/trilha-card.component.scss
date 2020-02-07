@@ -1,0 +1,64 @@
+    $tentativa: rgba(0, 0, 0, 0.582);
+    $laranja_padrao: rgb(255, 94, 0);
+    $laranja_mais_escuro: rgb(204, 75, 0);
+    .card-trila {
+        margin: 0 0.7vw;
+        width: 11vw;
+        padding: 5% 2% 0 2%;
+        border: solid 1px;
+        height: 25vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        cursor: pointer;
+        border-radius: 7px;
+        border-color: $laranja_mais_escuro;
+        outline-color: $laranja_mais_escuro;
+    }
+    
+    .info {
+        border-color: $laranja_mais_escuro;
+        outline-color: $laranja_mais_escuro;
+        text-align: center;
+    }
+    
+    #capa {
+        height: 13vh;
+        width: 6.5vw;
+    }
+    
+    .textbox {
+        margin-top: 4%;
+        display: flex;
+        justify-content: center;
+        height: 10vh;
+        font-size: 0.8vw;
+        cursor: default;
+        text-align: center;
+    }
+    
+    .musica {
+        font-size: 1vw;
+    }
+    
+    .album {
+        font-size: 0.9vw;
+        color: grey;
+    }
+    
+    .compositor {
+        font-size: 0.7vw;
+        color: lightgray;
+    }
+    
+    .card-trila:hover {
+        animation-name: card-anim;
+        animation-duration: 0.5s;
+        animation-fill-mode: forwards;
+    }
+    
+    @keyframes card-anim {
+        to {
+            background: $tentativa;
+        }
+    }

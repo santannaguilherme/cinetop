@@ -1,0 +1,40 @@
+.conteudo {
+    margin-top: 1%;
+}
+
+$preto_claro: rgb(5, 5, 5);
+$laranja_padrao: rgb(255, 94, 0);
+$laranja_mais_escuro: rgb(204, 75, 0);
+$laranja_mais_escuro_ainda: rgb(180, 69, 5);
+$preto_mais_claro: rgb(20, 20, 20);
+$preto_mais_claro_ainda: rgb(37, 37, 37);
+$laranja_mais_escuro_ainda_2: rgb(126, 51, 1);
+#filmes-display-especifico {
+    display: flex;
+    align-items: center;
+}
+
+.botoes-movimento {
+    height: 25vh;
+    width: 2.5vw;
+    background: none;
+    border: none;
+    outline: none;
+    opacity: 0.4;
+    z-index: 1;
+    position: relative;
+}
+
+.botoes-movimento:hover {
+    opacity: 0.8;
+}
+
+#apresentar-list {
+    width: 95vw;
+    height: 27vh;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    z-index: 0;
+    align-items: center;
+}

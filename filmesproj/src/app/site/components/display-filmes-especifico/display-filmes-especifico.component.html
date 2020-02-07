@@ -1,0 +1,8 @@
+<div id="filmes-display-especifico">
+    <button id="esq" class="botoes-movimento"></button>
+
+    <div id="apresentar-list">
+        <app-filme-card (click)="click(item)" class="card-film" *ngFor="let item of this.store.listaFilmesEspecificos" [filme]='item'></app-filme-card>
+    </div>
+    <button id="dir" class="botoes-movimento"></button>
+</div>

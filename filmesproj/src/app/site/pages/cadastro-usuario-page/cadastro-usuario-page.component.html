@@ -1,0 +1,52 @@
+<div class="site">
+    <div class="area-de-cadastro">
+        <div class="area-do-logo">Cadastre-se!</div>
+        <form class="form-group" [formGroup]="pageForm">
+            <div class="nome">
+                <input class="input" type="text" placeholder="Nome" formControlName="nome">
+            </div>
+            <div class="sobrenome">
+                <input class="input" type="text" placeholder="Sobrenome" formControlName="sobrenome">
+            </div>
+            <div class="email">
+                <input class="input" type="email" placeholder="E-mail" formControlName="email">
+            </div>
+            <div class="senha">
+                <input class="input" type="password" placeholder="Senha" formControlName="senha">
+            </div>
+            <div class="confirm-senha">
+                <input class="input" type="password" placeholder="Confirme sua senha" formControlName="confirmSenha">
+            </div>
+        </form>
+        <div class="erros">
+            <div class="alerta" [hidden]="pageForm.controls.nome?.valid || pageForm.controls.nome?.pristine">
+                <span class="alerta-vermelho" [hidden]="!pageForm.controls.nome?.errors?.required">Nome é um campo
+                    obrigatório!</span>
+            </div>
+            <div class="alerta" [hidden]="pageForm.controls.sobrenome?.valid || pageForm.controls.sobrenome?.pristine">
+                <span class="alerta-vermelho" [hidden]="!pageForm.controls.sobrenome?.errors?.required">Sobrenome é um
+                    campo obrigatório!</span>
+            </div>
+            <div class="alerta" [hidden]="pageForm.controls.email?.valid || pageForm.controls.email?.pristine">
+                <span class="alerta-vermelho" [hidden]="!pageForm.controls.email?.errors?.required">E-mail é um campo
+                    obrigatório!</span>
+            </div>
+            <div class="alerta" [hidden]="pageForm.controls.senha?.valid || pageForm.controls.senha?.pristine">
+                <span class="alerta-vermelho" [hidden]="!pageForm.controls.senha?.errors?.required">Senha é um campo
+                    obrigatório!</span>
+                <span class="alerta-vermelho" [hidden]="!pageForm.controls.senha?.errors?.minlength">Senha precisa ter ao menos 5 caracteres</span>
+            </div>
+            <div class="alerta" [hidden]="pageForm.controls.confirmSenha?.valid || pageForm.controls.confirmSenha?.pristine">
+                <span class="alerta-vermelho" [hidden]="!pageForm.controls.confirmSenha?.errors?.required">Confirme sua
+                    senha!</span>
+            </div>
+            <div class="alerta">
+                <span class="alerta-vermelho">{{this.erro}}</span>
+            </div>
+
+        </div>
+        <div class="rodape">
+            <button class="botao-cadastrar" type="submit" (click)="cadastrar()">Finalizar</button>
+        </div>
+    </div>
+</div>

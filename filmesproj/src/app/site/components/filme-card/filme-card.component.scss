@@ -1,0 +1,43 @@
+$tentativa: rgba(0, 0, 0, 0.582);
+.card-filme {
+    margin: 0 0.7vw;
+    width: 11vw;
+    padding: 5% 2% 0 2%;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 7px;
+}
+
+img {
+    min-height: 23vh;
+    min-width: 10vw;
+    height: 23vh;
+    width: 10vw;
+}
+
+.textbox {
+    margin-top: 4%;
+    display: flex;
+    justify-content: center;
+    height: 10vh;
+    font-size: 0.8vw;
+    cursor: default;
+    text-align: center;
+}
+
+.card-filme:hover {
+    animation-name: card-anim;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes card-anim {
+    to {
+        height: 32vh;
+        width: 12vw;
+        background: $tentativa;
+    }
+}

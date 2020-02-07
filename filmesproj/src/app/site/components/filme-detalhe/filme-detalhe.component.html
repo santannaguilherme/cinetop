@@ -1,0 +1,38 @@
+<div class="filme-detalhe">
+    <div id="header">
+        <button id="voltar" (click)='voltar()'>Voltar</button>
+        <button id="favoritar" (click)='favoritarFilme(filme.id)'><i id="coracao"class="fa fa-heart"></i></button>
+        <button id="assistir" (click)='assistirFilme()'><i class="fa fa-play"> </i></button>
+    </div>
+
+    <div class="conteudo">
+        <img id="imagem" [src]="filme.imagem">
+        <div class="texto">
+            <div id="titulo">
+                {{this.filme.titulo}}
+            </div>
+            <div class="info comeco">
+                Duração: {{filme.duracao}}
+            </div>
+            <div class="info">
+                Gênero: {{filme.genero}}
+            </div>
+            <div class="info">
+                Ano de lançamento: {{filme.ano}}
+            </div>
+            <div class="info final">
+                Classificação indicativa: {{filme.censura}}
+            </div>
+            <div class="sinopse">
+                {{filme.sinopse}}
+            </div>
+            <div class="diretor">
+                Diretor: {{filme.diretor}}
+            </div>
+            <div class="elenco">
+                Elenco: {{filme.elenco}}
+            </div>
+        </div>
+    </div>
+    <app-display-trilha></app-display-trilha>
+</div>

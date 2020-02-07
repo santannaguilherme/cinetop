@@ -1,0 +1,179 @@
+$preto_claro: rgb(5, 5, 5);
+$laranja_padrao: rgb(255, 94, 0);
+$laranja_mais_escuro: rgb(204, 75, 0);
+$laranja_mais_escuro_ainda: rgb(180, 69, 5);
+$preto_mais_claro: rgb(20, 20, 20);
+$preto_mais_claro_ainda: rgb(37, 37, 37);
+$preto_mais_claro_ainda_2: rgb(53, 53, 53);
+$laranja_mais_escuro_ainda_2: rgb(126, 51, 1);
+.site {
+    display: flex;
+    flex-direction: row;
+    background: linear-gradient(to top, $preto_claro, $preto_mais_claro, $preto_mais_claro_ainda);
+    width: 100vw;
+    height: 100vh;
+}
+
+.menu-navegador {
+    background: linear-gradient(to bottom, $preto_claro, $preto_mais_claro, $preto_mais_claro_ainda);
+    height: 100vh;
+    width: 15vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.apresentacao-usuario {
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.imagem {
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 15%;
+    margin-bottom: 5%;
+}
+
+.nome {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: default;
+}
+
+.opcoes {
+    width: 100%;
+    height: 50vh;
+}
+
+.opcoes-item {
+    width: 100%;
+    height: fit-content;
+    padding: 4% 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.opcoes-item:hover {
+    animation-name: opcao-item-anim;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.linha {
+    width: 92%;
+    border: 1px solid $preto_mais_claro;
+    border-radius: 100px;
+}
+
+.rodape-menu {
+    width: 100%;
+    height: 9.5vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.sair {
+    height: 3vh;
+    width: 15vw;
+    display: flex;
+    flex-direction: row;
+}
+
+.botao-sair:hover {
+    animation-name: sair-anim;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.confirmacao {
+    width: 15vw;
+    height: 6vh;
+}
+
+.confirmacao-sair {
+    width: 15vw;
+    height: 7vh;
+    z-index: 0;
+}
+
+.botao-sair {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    height: 100%;
+    width: 80%;
+    cursor: pointer;
+}
+
+.configuracoes {
+    height: 100%;
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.config-img {
+    content: url(../../../../assets/config-ico.png);
+    width: 45%;
+    height: 45%;
+    background-color: $preto_mais_claro_ainda;
+    padding: 10%;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.config-img:hover {
+    animation-name: config-anim;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.router {
+    width: 85vw;
+    height: 100%;
+}
+
+.foto-perfil {
+    clip-path: circle(50% at center);
+    height: 100%;
+    width: 80%;
+    border: 1px solid $laranja_padrao;
+}
+
+@keyframes opcao-item-anim {
+    to {
+        font-size: 105%;
+        background-color: $preto_mais_claro_ainda;
+    }
+}
+
+@keyframes sair-anim {
+    to {
+        background-color: $preto_mais_claro_ainda_2;
+    }
+}
+
+@keyframes config-anim {
+    to {
+        background-color: $preto_mais_claro_ainda_2;
+        width: 55%;
+        height: 55%;
+    }
+}

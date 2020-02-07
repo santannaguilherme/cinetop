@@ -1,0 +1,67 @@
+<div class="area-de-cadastro-trilha">
+    <div class="area-do-logo">Cadastro de filmes</div>
+    <form class="form-group" [formGroup]="pageForm">
+
+        <div class="nome">
+            <input class="input" type="text" placeholder="Nome" formControlName="nome">
+        </div>
+        <div class="sobrenome">
+            <input class="input" type="text" placeholder="Album" formControlName="album">
+        </div>
+        <div class="email">
+            <input class="input" type="text" placeholder="Compositor" formControlName="compositor">
+        </div>
+        <div class="email">
+            <input class="input" type="text" placeholder="Duracao" formControlName="duracao">
+        </div>
+        <div class="email">
+            <input class="input" type="text" placeholder="Capa" formControlName="capa">
+        </div>
+        <div class="email">
+            <input class="input" type="text" placeholder="Diretorio" formControlName="diretorio">
+        </div>
+        
+        
+    </form>
+
+
+    <div class="erros">
+        <div class="alerta" [hidden]="pageForm.controls.Nome?.valid || pageForm.controls.Nome?.pristine">
+            <span class="alerta-vermelho" [hidden]="!pageForm.controls.Nome?.errors?.required">Nome é um campo
+                obrigatório!</span>
+        </div>
+        
+        <div class="alerta" [hidden]="pageForm.controls.album?.valid || pageForm.controls.album?.pristine">
+            <span class="alerta-vermelho" [hidden]="!pageForm.controls.album?.errors?.required">album é um campo
+                obrigatório!</span>
+        </div>
+
+        <div class="alerta" [hidden]="pageForm.controls.Compositor?.valid || pageForm.controls.Compositor?.pristine">
+            <span class="alerta-vermelho" [hidden]="!pageForm.controls.Compositor?.errors?.required">Diretor é um campo
+                obrigatório!</span>
+        </div>
+
+        <div class="alerta" [hidden]="pageForm.controls.duracao?.valid || pageForm.controls.duracao?.pristine">
+            <span class="alerta-vermelho" [hidden]="!pageForm.controls.duracao?.errors?.required">duracao é um campo
+                obrigatório!</span>
+        </div>
+
+        <div class="alerta" [hidden]="pageForm.controls.capa?.valid || pageForm.controls.capa?.pristine">
+            <span class="alerta-vermelho" [hidden]="!pageForm.controls.capa?.errors?.required">capa é um campo
+                obrigatório!</span>
+        </div>
+        
+        <div class="alerta" [hidden]="pageForm.controls.diretorio?.valid || pageForm.controls.diretorio?.pristine">
+            <span class="alerta-vermelho" [hidden]="!pageForm.controls.diretorio?.errors?.required">diretorio é um campo
+                obrigatório!</span>
+        </div>
+
+        <div class="alerta">
+            <span class="alerta-vermelho">{{this.erro}}</span>
+        </div>
+
+    </div>
+    <div class="rodape">
+        <button class="botao" type="submit" (click)="cadastrar()">Finalizar</button>
+    </div>
+    </div>
