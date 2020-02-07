@@ -6,25 +6,18 @@ import {
   HttpEvent
 } from "@angular/common/http";
 import { Observable } from "rxjs";
+import { AdminGuardService } from './admin-guard.service';
 
 @Injectable({
   providedIn: "root"
 })
 export class AuthInterceptorService implements HttpInterceptor {
-  intercept(
-    req: HttpRequest<any>,
-    next: HttpHandler
-  ): Observable<HttpEvent<any>> {
-    const idToken = localStorage.getItem("id_token");
+  constructor(private authService: AdminGuardService){}
+  intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    // add authorization header with jwt token if available
+   
 
-    if (idToken) {
-      const cloned = req.clone({
-        headers: req.headers.set("Authorization", "Bearer " + idToken)
-      });
-
-      return next.handle(cloned);
-    } else {
-      return next.handle(req);
-    }
-  }
+    return next.handle(request);
+}
+  
 }

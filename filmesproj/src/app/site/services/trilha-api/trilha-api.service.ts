@@ -2,6 +2,7 @@ import { Observable } from 'rxjs';
 import { Trilha } from './../../models/trilha-sonora';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { tokenName } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
@@ -15,9 +16,11 @@ export class trilhaApiService {
   }
 
   cadastratrilha(trilha: Trilha): Observable<Trilha>
-  {      let httpHeaders = new HttpHeaders({
+  {      
+    let httpHeaders = new HttpHeaders({
     'Content-Type' : 'application/json',
-    'Cache-Control': 'no-cache'
+    'Cache-Control': 'no-cache',
+    'Authorization': 'Bearer '+ localStorage.getItem("id_token")
        }); 
     let options = { headers: httpHeaders}
    return this.http.post<Trilha>(this.url,trilha, options);

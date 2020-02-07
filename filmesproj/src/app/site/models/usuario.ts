@@ -6,5 +6,6 @@ export interface Usuario {
     senha:string,
     foto:string,
     favoritos:number[],
-    administrador:boolean,
+    administrador:boolean,    
+    token?: string;
 }
