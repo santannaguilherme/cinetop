@@ -29,16 +29,19 @@ export class LoginPageComponent {
     this.authService.login(val.email, val.password).subscribe(
       user => {
         this.store.consultaUsuario().subscribe(data => {
+          console.log(1);
           let usuario = data.find(
-            item => val.email === item.email && val.password === item.senha
-          );
+            item => val.email === item.email);
           if (usuario !== undefined) {
             this.store.logado = true;
             this.store.setState(usuario);
+            console.log(usuario);
             let aux = document.getElementById("site");
-            aux.classList.toggle("animacao-site-2");
-            this.router.navigateByUrl("/dashboard");
+          aux.classList.toggle("animacao-site-2");
+          this.router.navigateByUrl("/dashboard");
           }
+          
+          
         });
       },
       error => {}

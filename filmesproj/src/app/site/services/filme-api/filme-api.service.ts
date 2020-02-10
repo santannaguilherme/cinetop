@@ -12,21 +12,20 @@ import { Observable } from 'rxjs';
 
 export class FilmeApiService {
 
-  url ="http://localhost:8080/filmes";
-  constructor(private http: HttpClient) {}
+  url = "http://localhost:8080/filmes";
+  constructor(private http: HttpClient) { }
 
 
-Filmes(){
-  return this.http.get<Filme[]>(this.url);
- }
+  Filmes() {
+    let httpHeaders = new HttpHeaders().set('Authorization', localStorage.getItem("id_token"));
+    let options = { headers: httpHeaders }
+    return this.http.get<Filme[]>(this.url,options);
+  }
 
- cadastraFilme(filme: Filme): Observable<Filme>
- {      let httpHeaders = new HttpHeaders({
-   'Content-Type' : 'application/json',
-   'Cache-Control': 'no-cache'
-      }); 
-   let options = { headers: httpHeaders}
-  return this.http.post<Filme>(this.url,filme, options);
- }
+  cadastraFilme(filme: Filme): Observable<Filme> {
+    let httpHeaders = new HttpHeaders().set('Authorization', localStorage.getItem("id_token"));
+    let options = { headers: httpHeaders }
+    return this.http.post<Filme>(this.url, filme,options);
+  }
 
 }

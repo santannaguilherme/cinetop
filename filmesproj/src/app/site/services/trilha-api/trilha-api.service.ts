@@ -20,7 +20,7 @@ export class trilhaApiService {
     let httpHeaders = new HttpHeaders({
     'Content-Type' : 'application/json',
     'Cache-Control': 'no-cache',
-    'Authorization': 'Bearer '+ localStorage.getItem("id_token")
+    'Authorization': localStorage.getItem("id_token")
        }); 
     let options = { headers: httpHeaders}
    return this.http.post<Trilha>(this.url,trilha, options);
