@@ -1,10 +1,10 @@
 export interface Usuario {
-    id:number,
+    idUsuario:number,
     email:string,
     nome:string,
     sobrenome:string,
     senha:string,
-    foto:string,
+    imagem:string,
     favoritos:number[],
     administrador:boolean,    
     token?: string;

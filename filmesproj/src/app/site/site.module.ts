@@ -22,6 +22,7 @@ import { TrilhaCardComponent } from './components/trilha-card/trilha-card.compon
 import { CadastroFilmeComponent } from './components/cadastro-filme/cadastro-filme.component';
 import { FilmeAssistirComponent } from './components/filme-assistir/filme-assistir.component';
 import { CadastraTrilhaComponent } from './components/cadastra-trilha/cadastra-trilha.component';
+import {  Interceptor } from './services/interceptors/auth.service';
 
 
 
@@ -29,6 +30,7 @@ import { CadastraTrilhaComponent } from './components/cadastra-trilha/cadastra-t
   declarations: [LoginPageComponent, DashboardPageComponent, HomePageComponent, PerfilComponent, ConfirmacaoSairComponent, FilmesComponent, 
   CadastroUsuarioPageComponent, DisplayFilmesComponent, FilmeCardComponent, DisplayFilmesEspecificoComponent, FilmeDetalheComponent, 
   FilmesFavoritosComponent, DisplayTrilhaComponent, TrilhaCardComponent, DisplayTrilhaComponent, TrilhaCardComponent, CadastroFilmeComponent, FilmeAssistirComponent, CadastraTrilhaComponent],
+  
 
 
   exports: [
@@ -44,7 +46,7 @@ import { CadastraTrilhaComponent } from './components/cadastra-trilha/cadastra-t
     HttpClientModule,
     MatProgressSpinnerModule,
     RouterModule,
-    FormsModule
+    FormsModule,Interceptor
   ],
   providers: [
   ]

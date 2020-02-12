@@ -17,8 +17,8 @@
                     <span>{{this.store.state.email}}</span>
                 </div>
                 <div>
-                    <label id="foto" class="label">Foto de perfil:</label>
-                    <input type="text" [(ngModel)]="foto" class="input item">
+                    <label id="imagem" class="label">imagem de perfil:</label>
+                    <input type="text" [(ngModel)]="imagem" class="input item">
                 </div>
                 <div class="informativo">
                     Copie e cole a url da imagem. Ex: https://static.mundoeducacao.bol.uol.com.br/mundoeducacao/2019/10/1-coala.jpg
@@ -29,7 +29,7 @@
                     <mat-spinner [diameter]="20" [color]="warn">
                     </mat-spinner>
                 </div>
-                <button [disabled]="!foto" id="botao-salvar" type="submit" (click)=salvarPerfil()>Salvar</button>
+                <button [disabled]="!imagem" id="botao-salvar" type="submit" (click)=salvarPerfil()>Salvar</button>
             </div>
         </div>
 

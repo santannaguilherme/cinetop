@@ -1,5 +1,5 @@
 export interface Filme {
-    id: number;
+    idFilme: number;
     titulo: string;
     ano: string;
     censura: string;

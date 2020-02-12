@@ -9,6 +9,7 @@ import { map } from "rxjs/operators";
 import 'rxjs/add/operator/map';
 import { ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
 import { UsuarioApiStoreService } from '../usuario-api/usuario-api-store.service';
+import { environment } from 'src/environments/environment';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -30,7 +31,7 @@ export class AdminGuardService {
   }
   login(email: string, password: string) {
     return this.http
-      .post<any>("http://localhost:8080/login", { email, senha: password }, httpOptions)
+      .post<any>(environment.url+"/login", { email, senha: password }, httpOptions)
       .map(res => this.setSession(res.headers.get("Authorization")));
   }
 

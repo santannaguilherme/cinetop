@@ -5,6 +5,8 @@ import { Filme } from '../../models/filme';
 import { Router } from '@angular/router';
 import { UsuarioApiStoreService } from '../../services/usuario-api/usuario-api-store.service';
 import { TrilhaApiStoreService } from '../../services/trilha-api/trilha-api-store.service';
+import { map } from 'rxjs/operators';
+import { Usuario } from '../../models/usuario';
 
 
 @Component({
@@ -23,21 +25,28 @@ export class FilmeDetalheComponent implements OnInit {
     this.filme = this.store.Filme;
     this.storeTrilhas.criarListatrilhas(this.filme);
     this.favorito = document.getElementById('coracao') as HTMLButtonElement;
-    this.storeUsuario.state.favoritos.includes(this.filme.id) ? (this.favorito.style.color = "red") : (this.favorito.style.color = "white");
+    //this.storeUsuario.state.favoritos.includes(this.filme.idFilme) ? (this.favorito.style.color = "red") : (this.favorito.style.color = "white");
   }
   
 
   voltar() {
     history.go(-1)
   }
-  favoritarFilme(filmeId: number) {
-    let aux = this.storeUsuario.state;
-    aux.favoritos.includes(filmeId) ?
-      (aux.favoritos.splice(aux.favoritos.indexOf(filmeId), 1))
-      : (aux.favoritos.push(filmeId))
-    //this.storeUsuario.salvarPerfil(aux);
-    this.storeUsuario.setState(aux);
-    this.storeUsuario.state.favoritos.includes(this.filme.id) ? (this.favorito.style.color = "red") : (this.favorito.style.color = "white");
+  favoritarFilme() {
+    let user:Usuario;
+    user = this.storeUsuario.state;
+    let film:Filme = this.filme;
+    console.log(user);
+    this.storeUsuario.salvarFavorito(this.storeUsuario.state.idUsuario,this.filme.idFilme);
+
+
+
+   
+    // aux.favoritos.includes(filmeId) ?
+    //   (aux.favoritos.splice(aux.favoritos.indexOf(filmeId), 1))
+    //   : (aux.favoritos.push(filmeId))
+    // this.storeUsuario.setState(aux);
+    // this.storeUsuario.state.favoritos.includes(this.filme.id) ? (this.favorito.style.color = "red") : (this.favorito.style.color = "white");
   }
 
   assistirFilme() {

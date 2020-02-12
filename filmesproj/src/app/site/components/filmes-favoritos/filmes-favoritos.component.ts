@@ -12,10 +12,11 @@ import { Filme } from '../../models/filme';
 export class FilmesFavoritosComponent implements OnInit {
   favoritos:Filme[];
   constructor(private filmesStore: FilmeApiStoreService, private usuarioStore: UsuarioApiStoreService, private route: Router) { 
-    this.favoritos = this.filmesStore.state.filter(filme => this.usuarioStore.state.favoritos.includes(filme.id))
+    
   }
 
   ngOnInit() {
+    this.usuarioStore.getFavoritos(this.usuarioStore.state).subscribe(data => this.favoritos = data);
   }
   click(filme: Filme) {
     this.filmesStore.selecionaFilme(filme);

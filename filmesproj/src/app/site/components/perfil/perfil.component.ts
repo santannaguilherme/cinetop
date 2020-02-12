@@ -10,7 +10,7 @@ import { Usuario } from '../../models/usuario';
 })
 
 export class PerfilComponent implements OnInit {
-  foto: string;
+  imagem: string;
   fazendo: boolean;
   constructor(private store: UsuarioApiStoreService) {
 
@@ -24,12 +24,12 @@ export class PerfilComponent implements OnInit {
       this.fazendo = true;
       let usuario: Usuario;
       usuario = this.store.state, 
-      usuario.foto = this.foto,
+      usuario.imagem = this.imagem,
       this.store.salvarPerfil(usuario);      
       this.store.setState(usuario);
       
       setTimeout(timer => {
-        this.foto = "",       
+        this.imagem = "",       
         this.fazendo = false
       }, 2000);
     }

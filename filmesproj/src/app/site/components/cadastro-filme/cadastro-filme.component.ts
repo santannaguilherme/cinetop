@@ -44,10 +44,11 @@ export class CadastroFilmeComponent implements OnInit {
           let procuraFilmeCadastrado = filmes.find( filmeAPI => filmeAPI.titulo === filme.titulo);
           procuraFilmeCadastrado===undefined && this.validaUrlPoster(filme.imagem)?
           (
-            filme.id = filmes.length +1,
+            filme.idFilme = filmes.length +1,
             this.store.cadastraFilme(filme).subscribe(
               cadastro =>{
                 this.msg = "Cadastrado!";
+                this.store.consultaFilme().subscribe();
               }
             )
           ):

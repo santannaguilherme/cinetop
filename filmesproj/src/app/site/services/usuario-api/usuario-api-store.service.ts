@@ -3,6 +3,7 @@ import { UsuarioApiService } from './usuario-api.service';
 import { Usuario } from '../../models/usuario';
 import { Store } from 'src/app/core/models/store-model';
 import { Observable, of } from 'rxjs';
+import { Filme } from '../../models/filme';
 @Injectable({
   providedIn: 'root'
 })
@@ -20,15 +21,25 @@ export class UsuarioApiStoreService extends Store<Usuario> {
   }
   
   cadastraUsuario(usuarioForm: Usuario) {
-          usuarioForm.foto="../../../../assets/avatar.png";
+          usuarioForm.imagem="../../../../assets/avatar.png";
           usuarioForm.administrador= false;
           usuarioForm.favoritos=[];
       return this.api.cadastraUsuario(usuarioForm);   
   }
 
   salvarPerfil(usuario: Usuario){
-    this.api.salvarPerfil(usuario).subscribe(
-      data =>{}
-    )
+    this.api.salvarPerfil(usuario).subscribe(data=> {})
+  }
+
+  getFavoritos(usuario:Usuario){
+    return this.api.listarFavoritos(usuario.idUsuario);
+
+  }
+
+  salvarFavorito(idUser:Number,idFilme:Number){
+    console.log(idUser);
+    console.log(idFilme);
+    return this.api.salvarFavorito(idUser,idFilme);
+
   }
 }
